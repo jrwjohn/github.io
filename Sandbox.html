@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Wonder Woman's Oraculum</title>
+    <meta name="author" content="JonRobert W. Johnson">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       body {background-color: lightpink;}
+
+
+     </style>
+ </head>
+ <body>
+   <div id="infobox"></div>
+   <p><img src="992_WonderWoman.jpg" alt="Wonder Woman" height="182" width="182"></p>
+   <!-- https://www.theguardian.com/lifeandstyle/2017/jun/05/why-wonder-woman-is-a-masterpiece-of-subversive-feminism -->
+   
+<form>
+   Name: <input type="text">
+
+</form>
+
+ </body>
+ <script>
+ async function getSupes() {
+   const response = await fetch("https://comicvine.gamespot.com/api/characters/?api_key=b0a6cbfcb2d9b062aeff7f397c056d3185adaf1e&filter=name:spiderman&format=json");
+   const myJson = await response.json();
+ 
+   document.getElementById("infobox").innerHTML = JSON.stringify(myJson);
+  }
+  document.onload(getSupes());
+ </script>
+</html>
