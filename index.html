@@ -5,8 +5,12 @@
     <meta name="author" content="JonRobert W. Johnson">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Wonder Woman's Oraculum</h1>
     <style>
        body {background-color: lightpink;}
+      #name-input {
+         margin: 10px;
+      }
       #supes-button {
          width: 150px;
          background-color: darkblue;
@@ -31,7 +35,10 @@
    <p><img src="992_WonderWoman.jpg" alt="Wonder Woman" height="182" width="182"></p>
    <!-- https://www.theguardian.com/lifeandstyle/2017/jun/05/why-wonder-woman-is-a-masterpiece-of-subversive-feminism -->
    
+   <p>Type in a hero's name and click "Call Super Hero"</p>
    <input type="text" id="name-input"/>
+  
+   <br>
    <button id="supes-button">Call Super Hero</button>
    <div id="name-box"></div>
    <div id="info-box"></div>
@@ -48,11 +55,11 @@
    const myJson = await response.json();//code derived from E. Brettell
    document.getElementById("name-box").innerHTML = supesName;
    document.getElementById("info-box").innerHTML = (JSON.stringify(myJson.results[0].description)).replace(/<\s*figure[^>]*>(.*?)<\s*\/\s*figure>/g, "");//Code derived from E. Brettell
- 
-  }
+   }
   
  </script>
  <footer>
-    <sup>1</sup>Photo of Wonder Woman, TM DC Comics
+    <sup>1</sup>Drawing of Wonder Woman, TM DC Comics, originally published 5 Jun 17 by The Guardian, https://www.theguardian.com/lifeandstyle/2017/jun/05/why-wonder-woman-is-a-masterpiece-of-subversive-feminism<br>
+    <sup>2</sup>Comic vine api, https://comicvine.gamespot.com/api/characters/?api_key=omitted&filter=name:${supesName}&format=json
  </footer>
 </html>
